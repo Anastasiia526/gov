@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Preview</title>
+</head>
+<body>
+
+<h2 th:text="'Файл: ' + ${workbook.fileName}"></h2>
+
+<div th:each="sheet : ${workbook.sheets}">
+
+    <h3 th:text="'Sheet: ' + ${sheet.sheetName}"></h3>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th th:each="col : ${sheet.columns}" th:text="${col}"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="row : ${sheet.elements}">
+            <td th:each="col : ${sheet.columns}"
+                th:text="${row[col]}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br>
+</div>
+
+<a href="/">Назад</a>
+
+</body>
+</html>

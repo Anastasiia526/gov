@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload Excel</title>
+</head>
+<body>
+
+<h2>Завантаж Excel файл</h2>
+
+<form action="/preview" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required/>
+    <button type="submit">Preview</button>
+</form>
+
+<br>
+
+<form action="/convert" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required/>
+    <button type="submit">Download JSON</button>
+</form>
+
+</body>
+</html>
